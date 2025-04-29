@@ -41,4 +41,11 @@ public abstract class Product {
          else
              System.out.println("Error: invalid price!");
     }
+
+    @Override
+    public String toString(){
+         return ("ID: " + id + ", Title: " +title + ", Price: " + price);
+    }
+
+    protected abstract String generateId();
 }
