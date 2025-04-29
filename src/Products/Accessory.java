@@ -1,11 +1,15 @@
 package Products;
 
+import Inventory.Inventory;
+
 public class Accessory extends Product {
 
     private String color;
+    public static int ACC_ID = 1;
 
-    public Accessory(String title, Double price, String id) {
-        super(title, price, id);
+    public Accessory(String title, Double price, String color) {
+        super(title, price);
+        setColor(color);
     }
 
     public String getColor() {
@@ -26,6 +30,8 @@ public class Accessory extends Product {
 
     @Override
     protected String generateId() {
-        return "3";
+        int intid = 3000 + ACC_ID;
+        ACC_ID++;
+        return String.valueOf(intid);
     }
 }

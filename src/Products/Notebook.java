@@ -4,9 +4,12 @@ public class Notebook extends Product {
 
     private int pageCount;
     private boolean isHardCover;
+    public int NOTE_ID = 1;
 
-    public Notebook(String title, Double price, String id) {
-        super(title, price, id);
+    public Notebook(String title, Double price, int pageCount, boolean isHardCover) {
+        super(title, price);
+        setHardCover(isHardCover);
+        setPageCount(pageCount);
     }
 
     public int getPageCount() {
@@ -35,6 +38,8 @@ public class Notebook extends Product {
 
     @Override
     protected String generateId() {
-        return "2";
+        int intid = 2000 + NOTE_ID;
+        NOTE_ID++;
+        return String.valueOf(intid);
     }
 }

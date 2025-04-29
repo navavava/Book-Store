@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Inventory<T extends Product> {
     private ArrayList<T> items;
 
+    public Inventory(){
+        items = new ArrayList<>();
+    }
+
     public ArrayList<T> getItems() {
         return items;
     }
@@ -38,7 +42,7 @@ public class Inventory<T extends Product> {
 
     public void displayAll() {
         for (T t : items) {
-            System.out.println(t.toString() + "\n");
+            System.out.println(t.toString());
         }
     }
 }

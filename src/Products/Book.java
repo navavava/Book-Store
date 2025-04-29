@@ -5,9 +5,13 @@ public class Book extends Product {
     private String author;
     private String publication;
     private String genre;
+    public static int BOOK_ID = 1;
 
-    public Book(String title, Double price, String id, String author, String publication, String genre) {
-        super(title, price, id);
+    public Book(String title, Double price, String author, String publication, String genre) {
+        super(title, price);
+        setAuthor(author);
+        setPublication(publication);
+        setGenre(genre);
 
     }
 
@@ -37,7 +41,9 @@ public class Book extends Product {
 
     @Override
     protected String generateId() {
-        return "1";
+        int intid = 1000 + BOOK_ID;
+        BOOK_ID++;
+        return String.valueOf(intid);
     }
 
     @Override
