@@ -16,9 +16,10 @@ public class Inventory<T extends Product> {
     }
 
     public void applyDiscount(String productName, int discount) {
+        double factor = ((double) (100 - discount) / 100);
         for (T t : items) {
             if (t.getTitle().equals(productName))
-                t.setPrice((t.getPrice() * ((100 - discount) / 100)));
+                t.setPrice((t.getPrice() * factor));
         }
     }
 

@@ -36,8 +36,12 @@ public class Main {
         System.out.println("Total price of books: " + calculateTotalPrice(books));
         System.out.println("Total price of notebooks: " + calculateTotalPrice(notebooks));
         System.out.println("Total price of accessories:" + calculateTotalPrice(accessories));
+        System.out.println();
         System.out.println(books.findItemsById(1001).toString());
-        System.out.println(accessories.findItemsById(3001).toString());
+        try {
+            System.out.println(accessories.findItemsById(3001).toString());
+        } catch (NullPointerException _) {}
+        System.out.println();
         books.applyDiscount("MAN", 30);
         books.applyDiscount("Pride and prejudice", 20);
         System.out.println("BOOKS:");
@@ -57,7 +61,6 @@ public class Main {
         for (Product p : inventory.getItems()) {
             total += p.getPrice();
         }
-
         return total;
     }
 }
