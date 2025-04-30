@@ -38,6 +38,8 @@ public class Notebook extends Product {
 
     @Override
     protected String generateId() {
+        if (NOTE_ID > 999)
+            throw new IndexOutOfBoundsException();
         int intid = 2000 + NOTE_ID;
         NOTE_ID++;
         return String.valueOf(intid);

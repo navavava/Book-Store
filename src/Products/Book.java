@@ -41,6 +41,8 @@ public class Book extends Product {
 
     @Override
     protected String generateId() {
+        if (BOOK_ID > 999)
+            throw new IndexOutOfBoundsException();
         int intid = 1000 + BOOK_ID;
         BOOK_ID++;
         return String.valueOf(intid);
@@ -48,5 +50,6 @@ public class Book extends Product {
 
     @Override
     public String toString() {
-        return (super.toString() + ", Author: " + author + ", Genre: " + genre + ", Publication: " + publication);    }
+        return (super.toString() + ", Author: " + author + ", Genre: " + genre + ", Publication: " + publication);
+    }
 }

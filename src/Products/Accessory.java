@@ -30,6 +30,8 @@ public class Accessory extends Product {
 
     @Override
     protected String generateId() {
+        if (ACC_ID > 999)
+            throw new IndexOutOfBoundsException();
         int intid = 3000 + ACC_ID;
         ACC_ID++;
         return String.valueOf(intid);
